@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<title>{% block title %}{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+<nav>
+    <h1> Klasseside </h1>
+    <ul>
+	{% if session['user_id'] %}
+	    <li>{{ get_username_from_id(int(session['user_id'])) }}</li>
+	    <li><a href="{{ url_for('auth.logout') }}">Log out</a></li>
+	{% else %}
+	    <li><a href="{{ url_for('auth.login') }}">Log in</a></li>
+	    <li><a href="{{ url_for('auth.register') }}">Reigster</a></li>
+	{% endif %}
+	<li><a href="{{ url_for('index') }}">Home</a></li>
+	<li><a href="{{ url_for('rules') }}">rules</a></li>
+    </ul>
+</nav>
+<section class="content">
+    <header>
+	{% block header %}{% endblock %}
+    </header>
+    {% for message in get_flashed_messages() %}
+	<div class="flash">{{ message }}</div>
+    {% endfor %}
+    {% block content %}{% endblock %}
+</section>
+</html>
