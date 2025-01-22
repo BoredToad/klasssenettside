@@ -20,5 +20,3 @@ def index() -> str:
 @app.route("/rules")
 def rules():
     return render_template("homepage.jinja")
-
-# this is some change
