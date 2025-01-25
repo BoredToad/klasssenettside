@@ -27,7 +27,7 @@ def read_and_sort_csv() -> list[tuple[int, list[str]]]:
             students = list(map(
                 lambda student: student["name"],
                 filter(
-                    lambda student: student[str(week)] == 'x',
+                    lambda student: student[str(week)],
                     rows
                 )
             ))
