@@ -1,0 +1,21 @@
+{% extends 'base.jinja' %}
+
+{% block header %}
+    <h1>{% block title %}Students{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<div id="student_container">
+    {% for (group, i) in zip(read_and_sort_csv(), count()) %}
+    <!-- # eventually gonna change read_and_sort_csv() with something more optimal -->
+	<div class="group {{ even_or_odd(i) }}">
+	    <label>{{ group.0 }}</label>
+	    {% for student in group.1 %}
+		<div class="student">
+		    <label>{{ student }}</label>
+		</div>
+	    {% endfor %}
+	</div>
+    {% endfor %}
+</div>
+{% endblock %}
