@@ -4,6 +4,9 @@ import datetime
 from flask import render_template
 from itertools import count
 
+def even_or_odd(x: int) -> str:
+    return "odd" if x % 2 else "even"
+
 def tail(it: Iterator) -> Iterator:
     next(it)
     return it
