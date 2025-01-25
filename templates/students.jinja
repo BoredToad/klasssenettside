@@ -1,0 +1,13 @@
+{% extends 'base.jinja' %}
+
+{% block header %}
+    <h1>{% block title %}Students{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<div id="student_container">
+    {% for group in read_and_sort_csv() %}
+        <div class="group">{{ group }}</div>
+    {% endfor %}
+</div>
+{% endblock %}
