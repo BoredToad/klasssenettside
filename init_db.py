@@ -5,6 +5,25 @@ def init_db():
     db.connect()
     db.create_tables([User, Item])
 
+    Item.create(
+        name="pc-69",
+        category="pc",
+        manufacturer="idfk",
+        model="someModel",
+        specs="",
+        notes="",
+        status="works",
+    )
+    Item.create(
+        name="pc-99",
+        category="pc",
+        manufacturer="idfk",
+        model="someModel",
+        specs="",
+        notes="",
+        status="mostly_works",
+    )
+
     # bob = User.create(username="bob", password="pass")
     # bill = User.create(username="bill", password="pass")
 

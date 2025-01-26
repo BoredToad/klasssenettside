@@ -13,12 +13,12 @@ class User(Base):
 class Item(Base):
     name = CharField(unique=True)
     category = CharField()
-    maker = CharField()
+    manufacturer = CharField()
     model = CharField()
     specs = TextField()
     notes = TextField()
-    state = CharField()
+    status = CharField()
     updated_by = ForeignKeyField(User, null=True)
     last_edited = DateField(null=True)
-    available = BooleanField(default=True)
+    availability = BooleanField(default=True)
 
