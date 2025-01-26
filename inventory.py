@@ -8,6 +8,9 @@ from models import Item
 #<h1>some interruption</h1>
 #</th>
 #</tr>
+
+# Item.category.contains() | whoaifjdisi
+
 availability_helper = lambda item: True if item == "available" else False
 
 inventory_bp = Blueprint("inventory", __name__, "/inventory")
@@ -16,6 +19,16 @@ def get_and_filter_items(filters: dict[str, list[str]]) -> list[dict[str, str]]:
     items = Item.select()
 
     print(f"filters: \n{filters}")
+
+    searched = filters["search"][0]
+    if searched:
+        items = items.where(
+            Item.name.contains(searched) |
+            Item.model.contains(searched) |
+            Item.manufacturer.contains(searched) |
+            Item.specs.contains(searched) |
+            Item.notes.contains(searched)
+        )
 
     if "availability" in filters:
         items = items.where(
