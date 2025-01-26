@@ -5,5 +5,65 @@
 {% endblock %}
 
 {% block content %}
-<p>this is the inventory page</p>
+<form id="filters" method="post">
+    <input for="search">
+    <div id="availability_filter">
+	<label>Availability</label>
+	<br>
+	<input type="checkbox" name="availability" value="available">
+	<label for="available">Available</label>
+	<br>
+	<input type="checkbox" name="availability" value="not_available">
+	<label for="not_available">Not available</label>
+    </div>
+    <div id="status_filter">
+	<label>Status</label>
+	<br>
+	<input type="checkbox" name="status" value="works">
+	<label for="works">Works</label>
+	<br>
+	<input type="checkbox" name="status" value="mostly_works">
+	<label for="mostly_works">Mostly works</label>
+	<br>
+	<input type="checkbox" name="status" value="does_not_work">
+	<label for="does_not_work">Does not work</label>
+    </div>
+    <div id="category_filter">
+	<label>Category</label>
+	<br>
+	<input type="checkbox" name="category" value="pcs">
+	<label for="pcs">PC's</label>
+	<br>
+	<input type="checkbox" name="category" value="laptops">
+	<label for="laptops">Laptops</label>
+	<br>
+	<input type="checkbox" name="category" value="monitors">
+	<label for="monitors">Monitors</label>
+	<br>
+	<input type="checkbox" name="category" value="switches">
+	<label for="switches">Switches</label>
+	<br>
+	<input type="checkbox" name="category" value="routers">
+	<label for="routers">Routers</label>
+	<br>
+	<input type="checkbox" name="category" value="firewalls">
+	<label for="firewalls">Firewalls</label>
+	<br>
+	<input type="checkbox" name="category" value="gaming rigs">
+	<label for="gaming rigs">Gaming rigs</label>
+	<br>
+	<input type="checkbox" name="category" value="servers">
+	<label for="servers">Servers</label>
+	<br>
+	<input type="checkbox" name="category" value="tools">
+	<label for="tools">Tools</label>
+	<br>
+	<input type="checkbox" name="category" value="misc">
+	<label for="misc">Misc</label>
+    </div>
+    <input type="submit" value="filter">
+</form>
+<div id="inventory">
+    <p>this will eventually be the inventory page</p>
+</div>
 {% endblock %}
