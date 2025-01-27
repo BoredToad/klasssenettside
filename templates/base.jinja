@@ -1,7 +1,11 @@
 <!doctype html>
 <html>
+<head>
 <title>{% block title %}{% endblock %}</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+<script src="static/script.js"></script>
+</head>
+<body>
 <nav>
     <h1> Klasseside </h1>
     <ul>
@@ -27,4 +31,5 @@
     {% endfor %}
     {% block content %}{% endblock %}
 </section>
+</body>
 </html>

@@ -1,0 +1,32 @@
+<div class="item_expansion">
+    <form method="post" action="inventory/item/{{ g.name }}">
+    	<label>Specs:</label>
+	<input type="text" name="specs" value="{{ g.specs }}">
+	<label>Notes:</label>
+	<input type="text" name="notes" value="{{ g.notes }}">
+	<select name="status">
+	    <option value="works" {% if g.status == "works" %}selected="selected"{% endif %}>Works</option>
+	    <option value="mostly_works" {% if g.status == "mostly_works" %}selected="selected"{% endif %}>Mostly Works</option>
+	    <option value="does_not_work" {% if g.status == "does_not_work" %}selected="selected"{% endif %}>Does Not Work</option>
+	</select>
+	{% if session["user_id"] and (session["user_id"] == g.loaned_by.id or g.loaned_by == None) %}
+	    <input type="submit" name="change" value="change">
+	{% endif %}
+
+	<p>
+	    Last edited: {{ g.last_edited }}
+	    <br>
+	    by: {{ g.updated_by.username }}
+	</p>
+
+    	{% if session['user_id'] %}
+    	    {% if session['user_id'] == g.loaned_by.id %}
+    		    <input type="submit" name="return" value="return">
+    		{% elif not g.loaned_by %}
+    		    <input type="submit" name="loan out" value="loan out">
+    	    {% else %}
+    	        <p>loaned by {{ g.loaned_by.username }}</p>
+    		{% endif %}
+    	{% endif %}
+    </form>
+</div>
