@@ -5,67 +5,67 @@
 {% endblock %}
 
 {% block content %}
+<div id="inventory_grid">
 <form id="filters" method="post">
     <input name="search">
     <div id="availability_filter">
 	<label>Availability</label>
 	<br>
-	<input type="checkbox" name="availability" value="available">
+	<input id="available" type="checkbox" name="availability" value="available">
 	<label for="available">Available</label>
 	<br>
-	<input type="checkbox" name="availability" value="not_available">
+	<input id="not_available" type="checkbox" name="availability" value="not_available">
 	<label for="not_available">Not available</label>
     </div>
     <div id="status_filter">
 	<label>Status</label>
 	<br>
-	<input type="checkbox" name="status" value="works">
+	<input id="works" type="checkbox" name="status" value="works">
 	<label for="works">Works</label>
 	<br>
-	<input type="checkbox" name="status" value="mostly_works">
+	<input id="mostly_works" type="checkbox" name="status" value="mostly_works">
 	<label for="mostly_works">Mostly works</label>
 	<br>
-	<input type="checkbox" name="status" value="does_not_work">
+	<input id="does_not_work" type="checkbox" name="status" value="does_not_work">
 	<label for="does_not_work">Does not work</label>
     </div>
     <div id="category_filter">
 	<label>Category</label>
 	<br>
-	<input type="checkbox" name="category" value="pc">
-	<label for="pcs">PC's</label>
+	<input id="pc" type="checkbox" name="category" value="pc">
+	<label for="pc">PCs</label>
 	<br>
-	<input type="checkbox" name="category" value="laptop">
+	<input id="laptop" type="checkbox" name="category" value="laptop">
 	<label for="laptops">Laptops</label>
 	<br>
-	<input type="checkbox" name="category" value="monitor">
+	<input id="monitor" type="checkbox" name="category" value="monitor">
 	<label for="monitors">Monitors</label>
 	<br>
-	<input type="checkbox" name="category" value="switch">
+	<input id="switch" type="checkbox" name="category" value="switch">
 	<label for="switches">Switches</label>
 	<br>
-	<input type="checkbox" name="category" value="router">
+	<input id="router" type="checkbox" name="category" value="router">
 	<label for="routers">Routers</label>
 	<br>
-	<input type="checkbox" name="category" value="firewall">
+	<input id="firewall" type="checkbox" name="category" value="firewall">
 	<label for="firewalls">Firewalls</label>
 	<br>
-	<input type="checkbox" name="category" value="gaming_rig">
+	<input id="gaming_rig" type="checkbox" name="category" value="gaming_rig">
 	<label for="gaming rigs">Gaming rigs</label>
 	<br>
-	<input type="checkbox" name="category" value="server">
+	<input id="server" type="checkbox" name="category" value="server">
 	<label for="servers">Servers</label>
 	<br>
-	<input type="checkbox" name="category" value="tool">
+	<input id="tool" type="checkbox" name="category" value="tool">
 	<label for="tools">Tools</label>
 	<br>
-	<input type="checkbox" name="category" value="misc">
+	<input id="misc" type="checkbox" name="category" value="misc">
 	<label for="misc">Misc</label>
     </div>
     <input type="submit" value="filter">
 </form>
 <div id="inventory">
-    <p>this will eventually be the inventory page</p>
-    <table>
+    <table id="inventory_table">
 	<tr>
 	    <th>Icon</th>
 	    <th>Name</th>
@@ -76,7 +76,7 @@
 	    <th>Model</th>
 	</tr>
 	{% for item in g.items %}
-	<tr id="item_{{ item["id"] }}">
+	<tr id="item_{{ item["id"] }}" onclick="expand_item('item_{{ item["""id"""] }}')">
 	    <td>N/A</td>
 	    <td>{{ item["name"] }}</td>
 	    <td>{{ item["category"] }}</td>
@@ -87,5 +87,6 @@
 	</tr>
 	{% endfor %}
     </table>
+</div>
 </div>
 {% endblock %}

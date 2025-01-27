@@ -13,6 +13,7 @@ def init_db():
         specs="",
         notes="",
         status="works",
+        loaned_by=User.create(username="bob", password="pass")
     )
     Item.create(
         name="pc-99",

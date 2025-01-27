@@ -1,7 +1,35 @@
+html {
+  width: 100%;
+}
+
+body {
+  width: 100%;
+}
+
 .even {
   background-color: palevioletred;
 }
 
 .odd {
   background-color: paleturquoise;
+}
+
+#inventory_grid {
+  display: flex;
+  row-gap: 10px;
+  width: 100%;
+}
+
+#filters {
+  width: 15rem;
+  float: left;
+}
+
+#inventory {
+  /* I fucking hate css omfg */
+  flex-grow: 1;
+
+  table {
+    width: 100%;
+  }
 }

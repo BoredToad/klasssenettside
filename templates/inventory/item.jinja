@@ -1,0 +1,18 @@
+<div class="item_expansion">
+    <p>This is an expanded item of {{ g.name }}</p>
+    <p>Specs: {{ g.specs }}</p>
+    <p>Notes: {{ g.notes }}</p>
+    <p>updated_by: {{ g.updated_by }}</p>
+
+    {% if session['user_id'] %}
+	<form method="post" action="inventory/item/{{ g.name }}">
+	    {% if session['user_id'] == g.loaned_by.id %}
+    	        <input type="submit" name="return" value="return">
+    	    {% elif not g.loaned_by %}
+    	        <input type="submit" name="loan out" value="loan out">
+	    {% else %}
+		<p>loaned by {{ g.loaned_by.username }}</p>
+    	    {% endif %}
+	</form>
+    {% endif %}
+</div>

@@ -1,4 +1,5 @@
 from functools import wraps
+import functools
 from flask import Blueprint, flash, g, redirect, render_template, request, session, url_for
 from werkzeug.wrappers.response import Response
 from models import User
@@ -57,6 +58,14 @@ def login() -> Response | str:
 def logout():
     session.clear()
     return redirect(url_for('index'))
+
+def login_required(view):
+    @functools.wraps(view)
+    def wrapped_view(**kwargs):
+        if "user_id" not in session:
+            flash("Login required")
+            return redirect(url_for("auth.login"))
+        return view(**kwargs)
 
 def get_username_from_id(id: int) -> str:
     return User.get_by_id(id).username

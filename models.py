@@ -20,5 +20,6 @@ class Item(Base):
     status = CharField()
     updated_by = ForeignKeyField(User, null=True)
     last_edited = DateField(null=True)
-    availability = BooleanField(default=True)
+    # availability = BooleanField(default=True)
+    loaned_by = ForeignKeyField(User, null=True, default=None)
 
