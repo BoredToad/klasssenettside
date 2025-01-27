@@ -1,3 +1,4 @@
+from datetime import datetime
 from flask import Blueprint, g, redirect, render_template, request, session, url_for
 from models import Item, User
 from auth import login_required
@@ -66,18 +67,27 @@ def item(name: str):
     item = Item.get(Item.name == name)
 
     if request.method == 'GET':
-        g.name = item.name;
-        g.specs = item.specs;
-        g.notes = item.notes;
-        g.updated_by = item.updated_by;
-        g.last_edited = item.last_edited;
-        g.loaned_by = item.loaned_by;
+        g.name = item.name
+        g.specs = item.specs
+        g.notes = item.notes
+        g.updated_by = item.updated_by
+        g.last_edited = item.last_edited
+        g.loaned_by = item.loaned_by
+        g.status = item.status
+        print(g.status)
         return render_template("/inventory/item.jinja")
 
     if "return" in request.form:
         item.loaned_by = None
     elif "loan out" in request.form:
         item.loaned_by = User.get_by_id(session["user_id"])
+    else:
+        item.updated_by = User.get_by_id(session["user_id"])
+        item.specs = request.form["specs"]
+        item.notes = request.form["notes"]
+        item.status = request.form["status"]
+        item.last_edited = datetime.now()
+
     item.save()
 
     return redirect(url_for('inventory.inventory'))
