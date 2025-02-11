@@ -13,15 +13,13 @@ body {
 .main-wrapper {
     display: flex;
     width: 100%;
-    justify-content: center;
-    padding-right: 50px;
-    
+    justify-content: center;  
 }
 
 /* Main Content */
 main {
     flex-grow: 1;
-    padding: 75px;
+    padding: 70px;
     display: grid;
     grid-template-columns: repeat(2, 7cm); /* 2 columns with a width of 7cm */
     grid-gap: 1cm 6cm; /* 1cm gap between columns and rows */
@@ -31,7 +29,7 @@ main {
 
 /* Profile Cards */
 .profile-card {
-    background-color: #eae9e9;
+    background-color: #f9f9f9;
     padding: 9px;
     border-radius: 30px;
     box-shadow: 0 2px 4px rgba(65, 43, 43, 0.1);
