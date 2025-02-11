@@ -3,7 +3,9 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    background-color: goldenrod;
+    background-image: url(side_1_bakg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
@@ -11,28 +13,32 @@ body {
 .main-wrapper {
     display: flex;
     width: 100%;
+    justify-content: center;
+    padding-right: 50px;
+    
 }
 
 /* Main Content */
 main {
     flex-grow: 1;
-    padding: 65px;
+    padding: 75px;
     display: grid;
     grid-template-columns: repeat(2, 7cm); /* 2 columns with a width of 7cm */
     grid-gap: 1cm 6cm; /* 1cm gap between columns and rows */
+    justify-content: center;
 }
 
 
 /* Profile Cards */
 .profile-card {
     background-color: #eae9e9;
-    padding: 12px;
-    border-radius: 40px;
+    padding: 9px;
+    border-radius: 30px;
     box-shadow: 0 2px 4px rgba(65, 43, 43, 0.1);
     text-align: center;
     width: 12cm; 
-    height: 5cm; 
-    margin: 0 auto;
+    height: 6cm; 
+    margin: 0;
 }
 
 .profile-card img {
