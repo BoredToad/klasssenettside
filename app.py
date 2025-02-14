@@ -27,6 +27,6 @@ def index() -> str:
 
 @app.route("/rules")
 def rules():
-    return render_template("homepage.jinja")
+    return render_template("rulespage.jinja")
 
 app.route("/students")(students)
