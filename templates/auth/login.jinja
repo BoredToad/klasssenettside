@@ -1,16 +1,110 @@
-{% extends 'base.jinja' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
-{% block header %}
-    <h1>{% block title %}Login{% endblock %}</h1>
-{% endblock %}
+  <title>Log-inn</title>
 
-{% block content %}
-    <form method="post">
-	<label for="username">username</label>
-	<input name="username" id="username" required>
-	<label for="password">password</label>
-	<input name="password" id="password" required>
-	<input type="submit" value="login">
+  <style>
+    
+    .body2 {
+     background: linear-gradient(120deg,rgb(170, 114, 30) 0%,rgb(183, 109, 187) 50%,rgb(159, 162, 160) 100%);
+            background-size: 200% 200%;
+            animation: bg 15s infinite linear;
+            color: var(--text-color);
+            font-family: 'DM Sans', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            transition: all 0.5s;
+     
+    }
+
+    .Log-container {
+      background-color: rgba(255, 255, 255, 0.9);; 
+      padding: 2em;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
+                  0 6px 6px rgba(0, 0, 0, 0.23);
+      text-align: center;
+      width: 250px;
+      animation: appear 1s ease-out;
+    }
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .Log-container h2 {
+      margin-bottom: 1em;
+      animation: slideIn 1s ease-out;
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+
+    .Log-container form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    
+    .Log-container input {
+      border: none;
+      border-bottom: 2px solid #333;
+      margin-bottom: 1em;
+      padding: 0.5em;
+      font-size: 1em;
+      width: 250px;
+	  
+      transition: border-color 0.3s, box-shadow 0.3s, width 0.3s;
+      animation: slideIn 1s ease-out;
+      background-color: #f7f7f7;
+      border-radius: 3px;
+    }
+    .Log-container input:focus {
+      border-color: #63bb84;
+      box-shadow: 0 0 10px #63bb84;
+      outline: none;
+    }
+
+ 
+    .Log-container button {
+      background-color:#eeeeee;
+      color: #000;
+      border: none;
+      border-radius: 15px;
+      padding: 0.5em 3em;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.5s, transform 0.5s;
+      animation: slideIn 1s ease-out;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19);
+      border-color: #3b3b3b;
+    }
+    .Log-container button:hover {
+      background-color: rgb(206, 206, 206);
+      transform: scale(1.03);
+    }
+
+  </style>
+</head>
+
+<div class="body2">
+  <div class="Log-container">
+    <h2>Login</h2>
+    <form id="Log-form" method="post">
+      <input name="username" type="username" id="username" placeholder="Username" required>
+      <div class="password-wrapper">
+        <input name="password" type="password" id="password" placeholder="Password" required />
+      <button type="submit" value="login" id="sign-button">Login</button>
     </form>
-{% endblock %}
-
+  </div>
