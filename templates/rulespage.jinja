@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="no">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klasseregler</title>
-    <style>
+{% extends 'base.jinja' %}
+
+{% block header %}
+    <h1>{% block title %}Rules page{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<div>
+<style>
     * {
     margin: 0;
     padding: 0;
@@ -13,7 +17,7 @@
 }
 
 .bakgrunn {
-    background-image: url('bakgrunnbilde/regler_bildee.jpg');
+    background-image: url('static/bakgrunnbilde/regler_bildee.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -51,37 +55,35 @@ p {
     color: #333;
 }
 </style>
-</head>
-<body>
 
 <div class="bakgrunn">
     <div class="container">
         <div class="regel">
-            <img src="iconbilde/ta vare regel.png" alt="Ta vare på makkeren" class="icon">
+            <img src="static/iconbilde/ta vare regel.png" alt="Ta vare på makkeren" class="icon">
             <p>Ta vare på <br> makkeren dine</p>
         </div>
         <div class="regel">
-            <img src="iconbilde/respekt regel.png" alt="Respekter elever og lærere" class="icon">
+            <img src="static/iconbilde/respekt regel.png" alt="Respekter elever og lærere" class="icon">
             <p>Respekter med <br> elever og lærere</p>
         </div>
         <div class="regel">
-            <img src="iconbilde/mat regel.png" alt="Ingen mat eller åpen drikke" class="icon">
+            <img src="static/iconbilde/mat regel.png" alt="Ingen mat eller åpen drikke" class="icon">
             <p>Ingen mat eller <br> åpen drikke</p>
         </div>
         <div class="regel">
-            <img src="iconbilde/forstyrr regel.png" alt="Ikke forstyrr i timen" class="icon">
+            <img src="static/iconbilde/forstyrr regel.png" alt="Ikke forstyrr i timen" class="icon">
             <p>Ikke forstyr <br> i timen</p>
         </div>
         <div class="regel">
-            <img src="iconbilde/rydde regel.png" alt="Rydd pulten" class="icon">
+            <img src="static/iconbilde/rydde regel.png" alt="Rydd pulten" class="icon">
             <p>Rydd pult på <br> slutten av skole</p>
         </div>
         <div class="regel">
-            <img src="iconbilde/utstyr regel.png" alt="Ta vare på utstyr" class="icon">
+            <img src="static/iconbilde/utstyr regel.png" alt="Ta vare på utstyr" class="icon">
             <p>Ta vare på <br> utstyr og ikke <br> tull med AC</p>
         </div>
     </div>
 </div>
 
-</body>
-</html>
+</div>
+{% endblock %}
