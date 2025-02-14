@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="no">
+{% extends 'base.jinja' %}
+
+
+{% block header %}
+    <h1>{% block title %}Kontakt page{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+
+<div>
+    
+<style>
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-image: url('static/bakgrunnbilde/side_1_bakg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* Main Content Wrapper */
+.main-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;  
+}
+
+/* Main Content */
+main {
+    flex-grow: 1;
+    padding: 70px;
+    display: grid;
+    grid-template-columns: repeat(2, 7cm); /* 2 columns with a width of 7cm */
+    grid-gap: 1cm 6cm; /* 1cm gap between columns and rows */
+    justify-content: center;
+}
+
+
+/* Profile Cards */
+.profile-card {
+    background-color: #f9f9f9;
+    padding: 9px;
+    border-radius: 30px;
+    box-shadow: 0 2px 4px rgba(65, 43, 43, 0.1);
+    text-align: center;
+    width: 12cm; 
+    height: 6cm; 
+    margin: 0;
+}
+
+.profile-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 24px;
+}
+
+.profile-card h2 {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.profile-card p {
+    color: #4e4e4e;
+    font-size: 0.9em;
+}
+
+</style>
+
+    <!-- Main Content Wrapper -->
+    <div class="main-wrapper">
+        <!-- Main Content -->
+        <main>
+            <div class="profile-card">
+                <img src="static/iconbilde teacher-2.png" alt="Bjorn Hansen">
+                <h2>Bjorn Hansen</h2>
+                <p>Kontakt lærer 2ITA</p>
+                <p>Fag: Utvikling</p>
+                <p><a href="mailto:Bjornhansen@troms.no">Epost: Bjornhansen</a></p>
+            </div>
+            <div class="profile-card">
+                <img src="static/iconbilde teacher.png" alt="Ane Dybdahl">
+                <h2>Ane Dybdahl</h2>
+                <p>Fag: Norsk</p>
+                <p><a href="mailto:AneDybdahl@troms.no">Epost: AneDybdahl</a></p>
+
+            </div>
+            <div class="profile-card">
+                <img src="static/iconbilde teacher.png" alt="Cecilie Hansen">
+                <h2>Cecilie Hansen</h2>
+                <p>Fag: Utvikling</p>
+                <p><a href="mailto:Ceciliehansen@troms.no">Epost: Ceciliehansen</a></p>
+            </div>
+            <div class="profile-card">
+                <img src="static/iconbilde teacher-2.png" alt="Tormod Bruvoll">
+                <h2>Tormod Bruvoll</h2>
+                <p>Kontakt lærer 2ITB</p>
+                <p>Fag: Drift og Brukkerstotte</p>
+                <p><a href="mailto:TormodBruvoll@troms.no">Epost: TormodBruvoll</a></p>
+            </div>
+            <div class="profile-card">
+                <img src="static/iconbilde teacher-2.png" alt="Bård Jørgen">
+                <h2>Bård Jørgen</h2>
+                <p>Fag: Sanfunskunnskapp</p>
+                <p><a href="mailto:BårdJørgen@troms.no">Epost: BårdJørgen</a></p>
+            </div>
+            <div class="profile-card">
+                <img src="static/iconbilde teacher-2.png" alt="Marco Anelli">
+                <h2>Marco Anelli</h2>
+                <p>Fag: Kroppsoving</p>
+                <p><a href="mailto:MarcoAnelli@troms.no">Epost: MarcoAnelli</a></p>
+            </div>
+        </main>
+
+        
+    </div>
+</div>
+
+{% endblock%}
+

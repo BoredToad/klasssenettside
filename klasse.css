@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-image: url(side_1_bakg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* Main Content Wrapper */
+.main-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;  
+}
+
+/* Main Content */
+main {
+    flex-grow: 1;
+    padding: 70px;
+    display: grid;
+    grid-template-columns: repeat(2, 7cm); /* 2 columns with a width of 7cm */
+    grid-gap: 1cm 6cm; /* 1cm gap between columns and rows */
+    justify-content: center;
+}
+
+
+/* Profile Cards */
+.profile-card {
+    background-color: #f9f9f9;
+    padding: 9px;
+    border-radius: 30px;
+    box-shadow: 0 2px 4px rgba(65, 43, 43, 0.1);
+    text-align: center;
+    width: 12cm; 
+    height: 6cm; 
+    margin: 0;
+}
+
+.profile-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 24px;
+}
+
+.profile-card h2 {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.profile-card p {
+    color: #4e4e4e;
+    font-size: 0.9em;
+}
