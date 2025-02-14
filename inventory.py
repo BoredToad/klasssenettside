@@ -1,14 +1,6 @@
 from datetime import datetime
 from flask import Blueprint, g, redirect, render_template, request, session, url_for
 from models import Item, User
-from auth import login_required
-
-# note on how to interrupt table in future, the colspan tag is nice
-#<tr>
-#<th colspan="2" style="background-color:red;">
-#<h1>some interruption</h1>
-#</th>
-#</tr>
 
 inventory_bp = Blueprint("inventory", __name__, "/inventory")
 

@@ -7,8 +7,8 @@
 </head>
 <body>
 <nav>
-    <h1> Klasseside </h1>
     <ul>
+	<li><h1> Klasseside </h1></li>
 	{% if session['user_id'] %}
 	    <li>{{ get_username_from_id(int(session['user_id'])) }}</li>
 	    <li><a href="{{ url_for('auth.logout') }}">Log out</a></li>

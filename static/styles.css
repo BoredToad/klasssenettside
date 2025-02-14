@@ -1,9 +1,52 @@
 html {
   width: 100%;
+  background-color: black;
+  color: white;
 }
 
 body {
   width: 100%;
+  margin: 0;
+}
+
+nav {
+  height: 3rem;
+  background-color: #62844a;
+
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+nav ul {
+  margin-top: 0;
+  list-style: none;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li h1 {
+  display: inline;
+}
+
+nav ul li a {
+  text-decoration: none;
+}
+
+#inventory_table {
+  border-collapse: collapse;
+}
+
+#inventory_table tr:hover td {
+  background-color: white;
+  color: black;
+}
+
+#inventory_table tr:hover td .item_expansion {
+  background-color: black;
+  color: white;
 }
 
 .even {
