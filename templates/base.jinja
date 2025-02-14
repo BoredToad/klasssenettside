@@ -8,7 +8,10 @@
 <body>
 <nav>
     <ul>
-	<li><h1> Klasseside </h1></li>
+	<li><a href="{{ url_for('index') }}"><h1> Klasseside </h1></a></li>
+	<li><a href="{{ url_for('rules') }}">Rules</a></li>
+	<li><a href="{{ url_for('students') }}">Students</a></li>
+	<li><a href="{{ url_for('inventory.inventory') }}">Inventory</a></li>
 	{% if session['user_id'] %}
 	    <li>{{ get_username_from_id(int(session['user_id'])) }}</li>
 	    <li><a href="{{ url_for('auth.logout') }}">Log out</a></li>
@@ -16,10 +19,6 @@
 	    <li><a href="{{ url_for('auth.login') }}">Log in</a></li>
 	    <li><a href="{{ url_for('auth.register') }}">Reigster</a></li>
 	{% endif %}
-	<li><a href="{{ url_for('index') }}">Home</a></li>
-	<li><a href="{{ url_for('rules') }}">Rules</a></li>
-	<li><a href="{{ url_for('students') }}">Students</a></li>
-	<li><a href="{{ url_for('inventory.inventory') }}">Inventory</a></li>
     </ul>
 </nav>
 <section class="content">

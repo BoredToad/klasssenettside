@@ -1,7 +1,6 @@
 html {
   width: 100%;
-  background-color: black;
-  color: white;
+  background-color: #dddddd;
 }
 
 body {
@@ -11,7 +10,7 @@ body {
 
 nav {
   height: 3rem;
-  background-color: #62844a;
+  background-color: green;
 
   display: flex;
   justify-content: start;
@@ -31,8 +30,13 @@ nav ul li h1 {
   display: inline;
 }
 
-nav ul li a {
+nav a {
+  color: white;
   text-decoration: none;
+}
+
+nav a:hover {
+  color: red;
 }
 
 #inventory_table {
@@ -41,20 +45,22 @@ nav ul li a {
 
 #inventory_table tr:hover td {
   background-color: white;
-  color: black;
+}
+
+#inventory_table tr:active td {
+  background-color: green;
 }
 
 #inventory_table tr:hover td .item_expansion {
-  background-color: black;
-  color: white;
+  background-color: #dddddd;
 }
+
+/* .group:hover { */
+/*   background-color: green; */
+/* } */
 
 .even {
-  background-color: palevioletred;
-}
-
-.odd {
-  background-color: paleturquoise;
+  background-color: gray;
 }
 
 #inventory_grid {
